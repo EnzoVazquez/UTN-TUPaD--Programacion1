@@ -1,4 +1,5 @@
 #TRABAJO PRACTICO SECUENCIALES
+
 #ACTIVIDAD 1
 
 print("hola mundo!")
