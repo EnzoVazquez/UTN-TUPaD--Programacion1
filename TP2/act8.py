@@ -23,4 +23,4 @@ elif num == 3:
     p_mayus = nombre.title()
     print(p_mayus)
 else:
-    print("opcion inexistente3")
+    print("opcion inexistente")
