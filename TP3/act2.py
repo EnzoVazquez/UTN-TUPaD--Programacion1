@@ -8,4 +8,4 @@ count = 0
 for i in range(0,digitos, 1):
     count = count + 1
 
-print(count)
+print(f"{num} Tiene {count} digitos")
