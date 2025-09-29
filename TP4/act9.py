@@ -7,48 +7,31 @@ tablero = [["-","-","-"],
            ["-","-","-"],
            ["-","-","-"]]
 
-turno = True
-
 print("TA-TE-TI")
 print(f"{tablero[0]}\n{tablero[1]}\n{tablero[2]}")
 
-while turno == True :
-    print("Turno de CRUZ")
-    movimiento_1 = int(input("Dime la fila"))
-    movimiento_2 = int(input("ingrese columna"))
-    #comprobamos que este libre
-    if tablero[(movimiento_1-1)][(movimiento_2-1)] == "-":
-        ##si esta libre, le asignamos x
-        tablero [(movimiento_1-1)][(movimiento_2-1)] = "x"
-        print(f"{tablero[0]}\n{tablero[1]}\n{tablero[2]}")
-        #comprobamos si gano
-        for fila in tablero:
-            #validamos asi para que no se ejecute con -
-            if len(set(fila)) == 1 and fila[0] != "-":
-                print(f"Gano X en una fila")
-                break
-            else:
-                pass
-        turno = False
+turno = "X"
+jugadas = 0
+
+while jugadas < 9:
+    print(f"Turno de {turno}")
+
+    fila = int(input("Dime la fila (0-2)"))
+    columna = int(input("Dime la columna (0-2)"))
+
+    if fila < 0 or fila > 2 or columna < 0 or columna > 2:
+        print("Valor fuera del rango, pon un valor valido")
+        continue
+
+    if tablero[fila][columna] != "-":
+        print("casilla ocupada!")
+        continue
     else:
-        print("Lugar Ocupado")
-else :
-    print("Turno de CIRCULO")
-    movimiento_1 = int(input("Dime la fila"))
-    movimiento_2 = int(input("ingrese columna"))
-    #comprobamos que este libre
-    if tablero[(movimiento_1-1)][(movimiento_2-1)] == "-":
-        ##si esta libre, le asignamos x
-        tablero [(movimiento_1-1)][(movimiento_2-1)] = "0"
-        print(f"{tablero[0]}\n{tablero[1]}\n{tablero[2]}")
-        #comprobamos si gano
-        for fila in tablero:
-            #validamos asi para que no se ejecute con -
-            if len(set(fila)) == 1 and fila[0] != "-":
-                print(f"Gano X en una fila")
-                break
-            else:
-                pass
-        turno = True
+        tablero[fila][columna] = turno
+
+    print(f"{tablero[0]}\n{tablero[1]}\n{tablero[2]}")
+
+    if turno == "X" :
+        turno = "O"
     else:
-        print("Lugar Ocupado")
+        turno = "X"

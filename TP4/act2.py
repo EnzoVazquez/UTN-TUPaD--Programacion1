@@ -18,7 +18,8 @@ print(sorted(productos))
 #preguntar al usuario que producto desea eliminar
 while control == False:
 
-    eliminado = input("Dime que producto quiere eliminar: ")
+    entrada = input("Dime que producto quiere eliminar: ")
+    eliminado = entrada.lower()
 
     if eliminado in productos :
         productos.remove(eliminado)
