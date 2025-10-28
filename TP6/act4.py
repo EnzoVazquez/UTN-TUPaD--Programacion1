@@ -23,6 +23,6 @@ while len(guia) < 5:
 consulta = input("De quien quieres saber el numero?")
 
 if consulta in guia:
-    print(f"El numero de consulta es {guia[consulta]}")
+    print(f"El numero de {consulta} es {guia[consulta]}")
 else:
     print("No tenemos el numero en la lista")

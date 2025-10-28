@@ -1,0 +1,7 @@
+remera,25000,25
+jean,30000,30
+campera,35000,20
+buzo,40000,15
+gorra,10000,30
+boxer,5000,15
+medias,5000,20
