@@ -1,4 +1,3 @@
-#Funciones CRUD
 import csv
 import os
 
@@ -19,7 +18,7 @@ def leer():
 
         return catalogo
 
-#Sube el libro al archivo csv
+#Funcion que agrega el libro al archivo csv
 def agregar(item):
     with open("catalogo.csv","a",newline="",encoding="utf-8") as catalogo:
         escritor = csv.DictWriter(catalogo, fieldnames=["titulo","cantidad"])
@@ -38,6 +37,7 @@ def agregar_uno():
         else:
             agregar({"titulo":titulo,"cantidad":stock})
 
+#Funcion para agregar varios libros
 def agregar_varios():
     cantidad = int(input("Cuantos libros quieres ingresar? "))
     if validar_numero(cantidad):
@@ -65,14 +65,14 @@ def validar_repetido(titulo):
         
     return False
 
-#sobreescribe el catalogo actualizado
+#Funcion que sobreescribe el catalogo actualizado
 def guardar_catalogo(actualizado):
     with open("catalogo.csv","w",newline="",encoding="utf-8") as catalogo:
         escritor = csv.DictWriter(catalogo, fieldnames=["titulo","cantidad"])
         escritor.writeheader()
         escritor.writerows(actualizado)
 
-    #crear funcion que traiga todos los libros, actualize la cantidad de uno y vuelva a reescribir todo el archivo("w")
+#crear funcion que traiga todos los libros, actualize la cantidad de uno y vuelva a reescribir todo el archivo("w")
 def actualizar_stock():
     catalogo = leer()
     libro = input("ingrese el titulo al que desea agregar ejemplares ").strip().lower()
@@ -117,9 +117,12 @@ def agotados():
     for libro in catalogo:
         if libro["cantidad"] == 0:
             agotados.append(libro["titulo"])
-    
-    print("Libros agotados:")
-    print(agotados)
+
+    if len(agotados) == 0:
+        print("No hay titulos agotados!")
+    else:
+        print("Libros agotados:")
+        print(agotados)
 
 #funcion para validar que los numeros sean mayores a 0
 def validar_numero(numero):
@@ -166,6 +169,7 @@ def devolver():
     
 #Menu y sus funcionalidades
 while True:
+
     #Ve si existe la base de datos, y si no, la crea
     if os.path.exists("catalogo.csv"):
         pass
