@@ -4,8 +4,8 @@ Trabajo Práctico Integrador para la materia **Programación 1**.
 Este proyecto es una aplicación de consola en Python que permite gestionar, filtrar, ordenar y analizar datos de países a partir de un archivo CSV.
 
 ## 📋 Integrantes
-* **[Tu Nombre Completo]**
-* **[Nombre Completo de tu Compañero/a]**
+* **Enzo Vazquez**
+* **Luis Castro**
 
 ## 🏫 Datos de la Cátedra
 * **Universidad:** Universidad Tecnológica Nacional (UTN)
@@ -43,4 +43,4 @@ El proyecto está modularizado en los siguientes archivos:
 * **Estadísticas:** Cálculo automático de promedios y conteos.
 
 ## 📹 Video Explicativo
-[Inserta aquí el link a tu video de YouTube cuando lo tengas listo]
+https://youtu.be/SdzGmyVdSZc
