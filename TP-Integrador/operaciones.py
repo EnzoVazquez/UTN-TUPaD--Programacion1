@@ -1,6 +1,5 @@
 # Importamos las validaciones porque las necesitaremos
 import validaciones
-
 # --- Función Auxiliar para Imprimir ---
 def _mostrar_lista_paises(lista_paises, mensaje_cabecera):
     """
@@ -49,6 +48,10 @@ def agregar_pais(paises):
         }
         
         paises.append(nuevo_pais)
+
+        with open("paises.csv","a") as bd:
+            bd.write(nuevo_pais)
+
         print(f"¡País '{nombre}' agregado exitosamente!")
 
     return paises
